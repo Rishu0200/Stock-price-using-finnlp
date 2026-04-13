@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: stock-predictor-finbert
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free                  # change to "starter" or higher for production
+
+    # Render sets PORT automatically; our CMD reads ${PORT:-8000}
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: TICKER
+        value: AAPL
+      - key: MODEL_TYPE
+        value: xgboost
+      - key: NEWSDATA_API_KEY
+        sync: false             # set manually in Render dashboard (never commit)
+      - key: FINBERT_MODEL
+        value: ProsusAI/finbert
+
+    healthCheckPath: /health
+
+    # Auto-deploy on every push to main branch
+    autoDeploy: true
