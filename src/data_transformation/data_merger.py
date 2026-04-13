@@ -1,18 +1,7 @@
-# ──────────────────────────────────────────────────────────────
-#  src/data_transformation/data_merger.py
-#  Aligns news headlines to correct trading days, merges price
-#  features + sentiment features, adds lag/rolling features,
-#  and produces the final feature matrix saved to artifacts/.
-#  Implements Phase 5 Sections 7, 9, 10, 11.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 from pathlib import Path
-
 import numpy as np
 import pandas as pd
-
 from config.config import settings
 from config.constants import (
     ALL_FEATURES,

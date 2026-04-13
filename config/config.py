@@ -1,19 +1,9 @@
-# ──────────────────────────────────────────────────────────────
-#  config/config.py
-#  Runtime configuration — loaded from .env via python-dotenv.
-#  Import `settings` anywhere in the project:
-#      from config.config import settings
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
-
 from dotenv import load_dotenv
 
-# Load .env from project root (one level up from config/)
 ROOT_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT_DIR / ".env")
 

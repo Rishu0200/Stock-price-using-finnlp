@@ -1,17 +1,8 @@
-# ──────────────────────────────────────────────────────────────
-#  src/model_trainer/xgboost_trainer.py
-#  XGBoost binary classifier for stock direction prediction.
-#  Inherits BaseTrainer — only the model-specific logic lives here.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import pickle
 from pathlib import Path
-
 import numpy as np
 import xgboost as xgb
-
 from config.config import settings
 from config.constants import XGB_MODEL_FILE
 from src.model_trainer.base_trainer import BaseTrainer

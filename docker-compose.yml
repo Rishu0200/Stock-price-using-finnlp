@@ -1,12 +1,3 @@
-# ──────────────────────────────────────────────────────────────
-#  docker-compose.yml — local development only
-#  Production deployment uses the Dockerfile directly on Render.
-#
-#  Usage:
-#    docker compose up --build          # start API
-#    docker compose run app python main.py --mode train --ticker AAPL
-# ──────────────────────────────────────────────────────────────
-
 version: "3.9"
 
 services:

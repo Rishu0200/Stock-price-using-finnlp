@@ -1,15 +1,6 @@
-# ──────────────────────────────────────────────────────────────
-#  utils/backtest_utils.py
-#  Simulate a simple long-only trading strategy driven by model
-#  predictions. Used by both XGBoost and LSTM trainers for
-#  consistent backtesting output.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import numpy as np
 import pandas as pd
-
 from config.constants import INITIAL_CAPITAL, TRANSACTION_COST
 from utils.logging_utils import get_logger
 

@@ -1,18 +1,7 @@
-# ──────────────────────────────────────────────────────────────
-#  src/data_transformation/feature_engineering.py
-#  Builds price-based features from raw OHLCV data:
-#  returns, moving averages, volatility, volume ratio,
-#  technical indicators (RSI, MACD, Bollinger Bands),
-#  lag features, and the target variable.
-#  Implements Phase 5 notebook Section 3 & 10 as a class.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import numpy as np
 import pandas as pd
 import ta
-
 from config.constants import (
     BB_STD, BB_WINDOW, CLOSE_COL, HIGH_COL, LOW_COL,
     MA_LONG, MA_MID, MA_SHORT,

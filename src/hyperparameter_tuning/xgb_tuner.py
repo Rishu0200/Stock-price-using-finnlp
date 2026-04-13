@@ -1,14 +1,6 @@
-# ──────────────────────────────────────────────────────────────
-#  src/hyperparameter_tuning/xgb_tuner.py
-#  Hyperparameter tuning for XGBoost using Optuna (Bayesian)
-#  or sklearn RandomizedSearchCV as a lightweight fallback.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import warnings
 from pathlib import Path
-
 import numpy as np
 import xgboost as xgb
 from sklearn.model_selection import RandomizedSearchCV, TimeSeriesSplit

@@ -27,7 +27,7 @@ ENV/
 .ipynb_checkpoints/
 *.ipynb
 
-# Data — keep directory structure, ignore actual data files
+
 data/raw/*.csv
 data/raw/*.parquet
 data/raw/*.json

@@ -1,20 +1,10 @@
-# ──────────────────────────────────────────────────────────────
-#  src/model_trainer/lstm_trainer.py
-#  Bidirectional-capable LSTM for stock direction classification.
-#  Uses sliding-window sequences (SEQ_LEN trading days → predict day+1).
-#  Implements Phase 6 Sections 5 notebook logic as a trainer class.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 from pathlib import Path
-
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
-
 from config.config import settings
 from config.constants import LSTM_MODEL_FILE
 from src.model_trainer.base_trainer import BaseTrainer

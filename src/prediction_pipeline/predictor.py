@@ -1,21 +1,8 @@
-# ──────────────────────────────────────────────────────────────
-#  src/prediction_pipeline/predictor.py
-#  Full real-time prediction pipeline:
-#    1. Fetch latest OHLCV data
-#    2. Fetch latest news headlines
-#    3. Run FinBERT sentiment
-#    4. Engineer features
-#    5. Load saved model and predict next-day direction
-#  This is the single entry point for inference / serving.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import pickle
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Literal
-
 import numpy as np
 import pandas as pd
 

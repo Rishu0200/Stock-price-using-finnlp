@@ -1,14 +1,6 @@
-# ──────────────────────────────────────────────────────────────
-#  src/model_trainer/base_trainer.py
-#  Abstract base class for all model trainers.
-#  XGBoostTrainer and LSTMTrainer both inherit from this.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 from abc import ABC, abstractmethod
 from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import TimeSeriesSplit

@@ -1,16 +1,6 @@
-# ──────────────────────────────────────────────────────────────
-#  utils/date_utils.py
-#  Date / trading-calendar helper functions.
-#  Used by data_ingestion and data_transformation to align news
-#  headlines to the correct trading day (Phase 5 logic).
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 from datetime import datetime, timedelta, timezone
-
 import pandas as pd
-
 from config.constants import MARKET_OPEN_HOUR, MARKET_OPEN_MINUTE, MARKET_CLOSE_HOUR
 from utils.logging_utils import get_logger
 

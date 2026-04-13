@@ -1,20 +1,9 @@
-# ──────────────────────────────────────────────────────────────
-#  src/data_ingestion/news_fetcher.py
-#  Fetches financial news headlines from:
-#    Primary  — NewsData.io API (ticker-specific, 200 req/day free)
-#    Fallback — Financial RSS feeds (unlimited, client-side filter)
-#  Implements Phase 5 notebook logic as a clean, reusable class.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import re
 import time
 from pathlib import Path
-
 import feedparser
 import pandas as pd
-
 from config.config import settings
 from config.constants import FINANCIAL_RSS_FEEDS, NEWSDATA_REQUEST_DELAY, TICKER_KEYWORDS
 from utils.date_utils import parse_date_flexible

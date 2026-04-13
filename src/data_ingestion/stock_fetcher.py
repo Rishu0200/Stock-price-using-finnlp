@@ -1,16 +1,7 @@
-# ──────────────────────────────────────────────────────────────
-#  src/data_ingestion/stock_fetcher.py
-#  Fetches OHLCV stock price data from Yahoo Finance via yfinance.
-#  Wraps Phase 5 notebook logic into a clean, reusable class.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 from pathlib import Path
-
 import pandas as pd
 import yfinance as yf
-
 from config.config import settings
 from config.constants import (
     CLOSE_COL, HIGH_COL, LOW_COL, OPEN_COL, VOLUME_COL,

@@ -1,9 +1,7 @@
 from __future__ import annotations
-
 import argparse
 import sys
 from pathlib import Path
-
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel

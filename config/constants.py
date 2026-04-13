@@ -1,10 +1,3 @@
-# ──────────────────────────────────────────────────────────────
-#  config/constants.py
-#  Project-wide constants — feature names, column lists,
-#  model parameters, and financial thresholds.
-#  These values NEVER change at runtime; put tunable params in config.py.
-# ──────────────────────────────────────────────────────────────
-
 # ── Market hours (US Eastern) ──────────────────────────────────
 MARKET_OPEN_HOUR   = 9
 MARKET_OPEN_MINUTE = 30

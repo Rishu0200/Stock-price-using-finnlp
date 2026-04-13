@@ -1,17 +1,8 @@
-# ──────────────────────────────────────────────────────────────
-#  src/data_transformation/sentiment_pipeline.py
-#  FinBERT inference pipeline — converts raw news headlines into
-#  daily aggregated sentiment features.
-#  Implements Phase 4 + Phase 5 Section 8 notebook logic.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import numpy as np
 import pandas as pd
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline
-
 from config.config import settings
 from config.constants import (
     CONF_HIGH,

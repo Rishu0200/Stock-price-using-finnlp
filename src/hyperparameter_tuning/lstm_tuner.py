@@ -1,17 +1,9 @@
-# ──────────────────────────────────────────────────────────────
-#  src/hyperparameter_tuning/lstm_tuner.py
-#  Hyperparameter tuning for the LSTM model using Optuna.
-#  Searches over hidden size, num layers, dropout, LR, seq_len.
-# ──────────────────────────────────────────────────────────────
-
 from __future__ import annotations
-
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
-
 from config.config import settings
 from src.model_trainer.lstm_trainer import StockLSTM, StockSequenceDataset
 from utils.logging_utils import get_logger

@@ -3,7 +3,7 @@ services:
     name: stock-predictor-finbert
     runtime: docker
     dockerfilePath: ./Dockerfile
-    plan: free                  # change to "starter" or higher for production
+    plan: free                  
 
     # Render sets PORT automatically; our CMD reads ${PORT:-8000}
     envVars:
