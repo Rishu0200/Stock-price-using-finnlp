@@ -88,15 +88,18 @@ class DataMerger:
         sentiment_df = sentiment_df.copy()
 
         # Ensure date columns are datetime
-        price_df["date"]     = pd.to_datetime(price_df["date"])
-        if not sentiment_df.empty:
-            sentiment_df["date"] = pd.to_datetime(sentiment_df["date"])
+        price_df["date"] = pd.to_datetime(price_df["date"])
 
-        # Left join — keep every trading day even without news
         log.info("Merging price (%d rows) + sentiment (%d rows) …",
-                 len(price_df), len(sentiment_df))
+                len(price_df), len(sentiment_df))
 
-        master = price_df.merge(sentiment_df, on="date", how="left")
+        # Guard: empty sentiment_df has no columns — skip merge, neutral-fill handles it
+        if sentiment_df.empty or "date" not in sentiment_df.columns:
+            log.warning("No aligned sentiment — filling all days with neutral scores.")
+            master = price_df.copy()
+        else:
+            sentiment_df["date"] = pd.to_datetime(sentiment_df["date"])
+            master = price_df.merge(sentiment_df, on="date", how="left")
 
         # Fill missing sentiment with neutral values
         for col, fill_val in SENTIMENT_NEUTRAL_FILL.items():
