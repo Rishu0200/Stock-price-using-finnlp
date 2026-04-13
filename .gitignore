@@ -1,0 +1,72 @@
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.installed.cfg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+*.ipynb
+
+# Data — keep directory structure, ignore actual data files
+data/raw/*.csv
+data/raw/*.parquet
+data/raw/*.json
+data/processed/*.csv
+data/processed/*.parquet
+
+# Model artifacts
+models/*.pkl
+models/*.pt
+models/*.pth
+models/*.json
+models/*.bin
+artifacts/*.pkl
+artifacts/*.csv
+artifacts/*.joblib
+
+# Logs
+logs/
+*.log
+
+# HuggingFace model cache
+.cache/
+~/.cache/huggingface/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker
+.dockerignore
