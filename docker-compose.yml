@@ -1,0 +1,40 @@
+# ──────────────────────────────────────────────────────────────
+#  docker-compose.yml — local development only
+#  Production deployment uses the Dockerfile directly on Render.
+#
+#  Usage:
+#    docker compose up --build          # start API
+#    docker compose run app python main.py --mode train --ticker AAPL
+# ──────────────────────────────────────────────────────────────
+
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: stock-predictor-finbert:local
+    container_name: stock_predictor
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      APP_ENV: development
+      APP_PORT: 8000
+    volumes:
+      # Mount local directories so model artifacts persist between runs
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./artifacts:/app/artifacts
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
